@@ -1,0 +1,47 @@
+<h1>Eat Some Burgers!</h1>
+
+<div id="burger_box">
+    <div id="left-side">
+        <h2>Burgers yet to be devoured!</h2>
+
+        <ul id="non_devoured_list">
+            {{#each burgers}}
+            {{#unless devoured}}
+            <div class="burger_div">
+                <h3 class="burgers_uneaten">Burger ▶<h3 id="{{id}}" class="burger_name">{{burger_name}}</h3>
+                </h3>
+                <button class="devour_btn">Devour it!</button>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div id="right-side">
+        <h2>Burgers that have been devoured!</h2>
+
+        <ul id="devoured_list">
+            {{#each burgers}}
+            {{#if devoured}}
+            <div class="burger_div">
+                <h3 class="burgers_eaten">Eaten ▶ <h3 class="burger_name">{{burger_name}}</h3>
+                </h3>
+            </div>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div id="page-bottom">
+    <h2>Add a Burger</h2>
+
+    <form class="add_burger_form">
+        <div class="form_div">
+            <label for="burger">New Burger Name: </label>
+            <input type="text" id="burger" name="name">
+        </div>
+
+        <button class="add_btn" type="submit">Add Burger</button>
+    </form>
+</div>
